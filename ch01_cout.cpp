@@ -1,7 +1,7 @@
-// ÁÖ¼®Ã³¸® : Ctrl + k + c
-// ÁÖ¼®ÇØÁ¦ : Ctrl + k + u
-// ÀÌÀü´Ü°è : Ctrl + z
-// µÇµ¹¸®±â : Ctrl + y
+// ì£¼ì„ì²˜ë¦¬ : Ctrl + k + c
+// ì£¼ì„í•´ì œ : Ctrl + k + u
+// ì´ì „ë‹¨ê³„ : Ctrl + z
+// ë˜ëŒë¦¬ê¸° : Ctrl + y
 
 // build   : Ctrl + Shift + b
 // execute : Ctrl + F5
@@ -9,30 +9,36 @@
 #include<iostream>
 /*
 cout
-- coutÀº ¿ŞÂÊ ½¬ÇÁÆ® ¿¬»êÀÚ(<<)µÚ¿¡ ÀÖ´Â ³»¿ëÀ» Ãâ·ÂÇÕ´Ï´Ù
+- coutì€ ì™¼ìª½ ì‰¬í”„íŠ¸ ì—°ì‚°ì(<<)ë’¤ì— ìˆëŠ” ë‚´ìš©ì„ ì¶œë ¥í•©ë‹ˆë‹¤
 
-:: => scope ¿¬»êÀÚ;Æ¯Á¤°ø°£¿¡ Á¢±ÙÇÒ ¶§ »ç¿ë
+:: => scope ì—°ì‚°ì;íŠ¹ì •ê³µê°„ì— ì ‘ê·¼í•  ë•Œ ì‚¬ìš©
 
-end1; ¶óÀÎº¯°æ
+endl; ë¼ì¸ë³€ê²½ (Abbrebiation of END Line)
 
 */
 int main() {
 
-	std::cout << "Ãâ·ÂÇÒ ³»¿ë ÀÛ¼º"<< std::end1;
-	std::cout << "¶Ç ¾µ¸»ÀÕÀ¸¸é ÀÌ·¸°Ô ÀÛ¼º^^" << std::end1;
-	std::cout << std::end1; /*³¡¿¡´Â Ç×»ó ÀÌ·¸°Ô ÇØÁà¾ß ÇÔ*/
+	std::cout << "ì¶œë ¥í•  ë‚´ìš© ì‘ì„±"<< std::endl;
+	std::cout << "ë˜ ì“¸ë§ì‡ìœ¼ë©´ ì´ë ‡ê²Œ ì‘ì„±^^" << std::endl;
+	// std::cout << std::endl; /*ëì—ëŠ” í•­ìƒ ì´ë ‡ê²Œ í•´ì¤˜ì•¼ í•¨ - Not Necessary*/
 
-		int a = 10;
-		std::cout << "a : " << a << std::end1;
-		std::cout << std::end1;
+	int a = 10;
+	std::cout << "a : " << a << std::endl;
+	std::cout << std::endl;
 
-		/* int(Á¤¼ö) ÇÏ°í µ¥ÀÌÅÍ°ª ³ÖÀ½
-		c¿¡¼­´Â printf¸¦ ÇÏÁö¸¸ c++¿¡¼­´Â º¯¼ö¸í¸¸ »ç¿ëÇÔ*/
+	/* int(ì •ìˆ˜) í•˜ê³  ë°ì´í„°ê°’ ë„£ìŒ
+	cì—ì„œëŠ” printfë¥¼ í•˜ì§€ë§Œ c++ì—ì„œëŠ” ë³€ìˆ˜ëª…ë§Œ ì‚¬ìš©í•¨*/
 
-		double b = 2.2;
-	std::cout << "b : " << b << std::end1;
-	std::cout << std::end1;
+	double b = 2.2;
+	std::cout << "b : " << b << std::endl;
+	std::cout << std::endl;
 
-	std::cout << "a : " << a << ",b:" << b << std::end1;
-	/*ÆÄÀÏÀÌ ¹Ù²ğ ¶§ ¸¶´Ù >>·Î Ãâ·ÂÇØÁÖ±â~~ */
-	}
+	std::cout << "a : " << a << ",b:" << b << std::endl;
+	/*íŒŒì¼ì´ ë°”ë€” ë•Œ ë§ˆë‹¤ >>ë¡œ ì¶œë ¥í•´ì£¼ê¸°~~ */
+}
+
+// Fix Log: Hyecheol (Jerry) Jang
+// 1. In order to end the line, use endl, not end1
+// 2. No need to write "cout << endl;" at the end. If you want to make a line indent, use \n.
+//    See this article for more information about Escape Sequence: https://en.wikipedia.org/wiki/Escape_sequences_in_C
+// 3. Fix Indentation: Proper indentation is important for code readability
