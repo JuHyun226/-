@@ -1,0 +1,50 @@
+// ch03-Quiz3_cin.cpp
+
+#include <iostream>
+
+int main() {
+
+
+	// 세과목의 점수를 입력받앙서 총점, 평균, 학점을 구하는 코드작성
+	// - int : 점수, 총점
+	//	 double: 평균
+	//   char: 학점
+	// - 평균을 사용해서 학점을 구하세요
+	// A : 100~90, B : 89~90, C : 79~70, D : 69~60, F : 59~60
+
+}
+
+method 1.
+int sub1, sub2, sub3;
+	std::cout << "세과목 점수 입력 > ";
+	std::cin >> sub1 >> sub2 >> sub3;
+	std::cout << std::endl;
+
+	int tot = sub1 + sub2 + sub3;
+	double avg = (double)tot / 3; // tot / 3.0;
+//3."0" because 정수/정수 = 정수
+
+method 2. 
+
+	int sub[3];
+	int subSize = sizeof(sub) / sizeof(int);
+
+	// 입력
+	int tot = 0;
+	std::cout << "세과목 점수 입력 > ";
+	for (int i = 0; i < subSize; i++) {
+		std::cin >> sub[i];
+		tot += sub[i];
+	}
+	std::cout << std::endl;
+	double avg = (double)tot / subSize;
+
+	char grade = 'F';
+	if (avg >= 90) grade = 'A';
+	else if (avg >= 80) grade = 'B';
+	else if (avg >= 70) grade = 'C';
+	else if (avg >= 60) grade = 'D';
+
+	std::cout << "총점 : " << tot << std::endl
+		<< "평균 : " << avg << std::endl
+		<< "학점 : " << grade << std::endl;
