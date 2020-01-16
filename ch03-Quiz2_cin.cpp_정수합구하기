@@ -1,0 +1,26 @@
+// ch03-Quiz2_cin.cpp
+
+#include <iostream>
+
+int main() {
+
+	//정수 5개를 입력받아서 입력받은 수의 합을 구하는 코드를 작성
+	//- 마이너스(-)값은 처리 불가
+
+int data[10];
+	int dataSize = sizeof(data) / sizeof(int);
+  // dataSize 쓰는 이유는 상수데이터 쓰면 한번 바뀌면 다 바꿔야 해서
+	int sum = 0;
+	// 입력
+	for (int i = 0; i < dataSize; i++) {
+		std::cout << i + 1 << "번째 입력 > ";
+		std::cin >> data[i];
+		if (data[i] < 0) {
+			--i;
+		}
+		else {
+			sum += data[i];
+		}
+	}
+	std::cout << "합 : " << sum << std::endl;
+}
