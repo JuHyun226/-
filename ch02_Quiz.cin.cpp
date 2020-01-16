@@ -1,5 +1,5 @@
 
-// ch01_Quiz1.cin.cpp
+// ch02_Quiz.cin.cpp
 
 #include <iostream>
 
