@@ -127,6 +127,8 @@ int MessageInput(const char* message) {
 
 //char 배열을 50개 만들기 => 상수는 수정 하면 안돼기에 const로 차단시켜라!
 
+void InputString(char* stn);
+
 int main() {
 
 	char word[50];
@@ -135,8 +137,10 @@ int main() {
 }
 
 void InputString(char* stn) {
-
+	cout << "단어 입력 > ";
+	cin >> stn;
 }
+
 
 //배열로 넘어갔으니 무조건 포인터로 받아야함. 
 // stn을가지고 저 배열에 넣을 수 있게 됨.
