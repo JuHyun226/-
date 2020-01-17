@@ -122,3 +122,21 @@ int MessageInput(const char* message) {
 // 데이터입력이 출력되서
 //cin에서 value입력받고,
 //해당값을 반환시켜라
+
+
+
+//char 배열을 50개 만들기 => 상수는 수정 하면 안돼기에 const로 차단시켜라!
+
+int main() {
+
+	char word[50];
+	InputString(word);
+
+}
+
+void InputString(char* stn) {
+
+}
+
+//배열로 넘어갔으니 무조건 포인터로 받아야함. 
+// stn을가지고 저 배열에 넣을 수 있게 됨.
