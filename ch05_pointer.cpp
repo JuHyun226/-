@@ -104,6 +104,13 @@ int main() {
 	// *(ar + 1)    (2)  == *(p + 1)   (2)
 	// ar[1]        (2)  == p[1]       (2)
 
+	int ar_size = sizeof(ar) / sizeof(int);
+	for (int i = 0; i < ar_size; i++) {
+		cout << "[" << i << "] : " << ar[i] << ", " << *(ar + i) << ", " << *(p + i) << ", " << p[i] << endl;
+
+	}
+	cout << endl;
+
 
 	// 시작주소가 A0이면 그다음은 A4 그다음은 A8이 됨.
 	// ar이 가진 값은 초기 주소니 당연히 (A0) == p  
