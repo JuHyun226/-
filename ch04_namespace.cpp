@@ -37,7 +37,7 @@ int main() {
   
  
   one::showData(two::a); //one의 showdata함수를 사용하면서 two지역에 있는 변수 a를 보내도 됨.(해당 지역의 이름 쓰고 그 안에꺼 쓰기)
-  two::showData('A'); //two지역의 showdata함수 쓰면 문자 하나 보내줘야겟죠.-왜 대문자 하나를 쓴 거지??
+  two::showData('A'); //two지역의 showdata함수 쓰면 문자 하나 보내줘야겟죠.QQ 왜 대문자 하나를 쓴 거지??
 
   two::a =12; //two의 a를 12로 바꾸고
   one::showData(two::a); //변경되어 있음.
@@ -45,7 +45,7 @@ int main() {
   one::showData(two::inner::a); //inner구역의 a는 바로 못쓰고 two를 통해 나열-접근해야 한다.
 
 	namespace twoin = two::inner; 
-	one::showData(twoin::a); //왜 위치가 이렇게 되는건지 모르겟다??
+	one::showData(twoin::a); //QQ 왜 위치가 이렇게 되는건지 모르겟다??
   //how to use inner more convinient: namespace=> two::inner
   
   
