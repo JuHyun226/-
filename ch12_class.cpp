@@ -54,3 +54,35 @@ int main() {
 
 }
 
+class Robot {
+public:
+	string arm;
+	string leg;
+
+	void setRobot(string _arm = "팔", string _; eg = "모터") {
+		arm = _arm;
+		leg = _leg;
+	}
+
+	void armMove() {
+		cout << arm << "을(를) 사용합니다~" << endl;
+	}
+
+	void legMove(int angle = 90) {
+		cout << leg << " " << angle << "도 회전" << endl;
+	}
+};
+
+int main() {
+
+	Robot roboA;
+	roboA.setRobot();
+	roboA.armMove();
+	roboA.legMove();
+	roboA.legMove(120);
+	cout << endl;
+
+	Robot roboB;
+	roboB.setRobot("집게");
+	roboB.armMove(); //객체 안의 클래스는 점을 찍어서 접근
+}
