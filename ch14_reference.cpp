@@ -204,13 +204,16 @@ class Student {
 
 class StuMananger {
 public:
-	int stuSize;          // 학생수
-	Student* arr;         // 학생 배열 위치
-	char inputCheck;      // 입력 실행 확인(1.실행   0.미실행 )
+	int stuSize;         // 학생수
+	Student* arr;        // 학생 배열 위치
+	int inputCheck;      // 입력 실행 확인( 1.실행   0.미실행 )
+	int arrayCheck;      // 배열 생성 확인( 1.생성   0.미생성 ) 
+
 
 	void begin() { //멤버필드 초기화
 		stuSize = 0;
 		arr = NULL;
+		arrayCheck = 0;
 		inputCheck = 0;
 	}
 
@@ -220,19 +223,25 @@ public:
 
 	void makeArray() {
 		arr = new Student[stuSize];
+		arrayCheck = 1;
 		inputCheck = 0;
 	}
 
 	void InputArray() {
-		for (int i = 0; i < stuSize; i++) {
-			cout << i + 1 << "번째 입력" << endl;
-			cout << "이름 > "; cin >> arr[i].name; //(arr+i)->name;
-			cout << "Cpp  > "; cin >> arr[i].cpp;
-			cout << "Java > "; cin >> arr[i].java;
-			arr[i].avg = (double(arr[i].cpp) + arr[i].java) / 2;
+		if (arr != NULL && arrayCheck == 1) {
+			for (int i = 0; i < stuSize; i++) {
+				cout << i + 1 << "번째 입력" << endl;
+				cout << "이름 > "; cin >> arr[i].name; //(arr+i)->name;
+				cout << "Cpp  > "; cin >> arr[i].cpp;
+				cout << "Java > "; cin >> arr[i].java;
+				arr[i].avg = (double(arr[i].cpp) + arr[i].java) / 2;
+			}
+			cout << endl;
+			inputCheck = 1;
 		}
-		cout << endl;
-		inputCheck = 1;
+		else {
+			cout << "데이터 공간을 생성하세요~" << endl;
+		}
 	}
 
 	void OutputArray() {
@@ -252,6 +261,9 @@ public:
 			}
 			cout << endl;
 		}
+		else {
+			cout << "데이터를 입력하세요~" << endl;
+		}
 	}
 };
 
@@ -260,6 +272,7 @@ int main() {
 	StuMananger classOne;
 	classOne.begin();
 	classOne.setSize();
+	classOne.InputArray();
 	classOne.makeArray();
 	classOne.OutputArray();
 	classOne.InputArray();
