@@ -1,6 +1,12 @@
 /*
 	ch19_copy-constructor.cpp
 	- 같은 객체를 넘겨받아 초기화시키는게 보이면 생성자가 있다는 뜻.
+
+복사 생성자
+- 같은 class의 객체를 넘겨 받아서 새로운 객체를 초기화 할 때 실행되는 생성자
+- 복사 생성자를 정의하지 않으면, 자동으로 default 복사생성자가 실행됨.
+- 객체의 멤버필드 공간을 동적할당 했을때에는 복사생성자를 재정의 해야함.
+
 */
 
 #include <iostream>
@@ -90,4 +96,19 @@ int main() {
 
 	objA.show();
 	objB.show();
+
+	objA.show();
+	objB.show();
+	cout << endl;
+
+	Deep* pA = new Deep(100, "A");
+	Deep* pB = new Deep(*pA); //객체(*pA)를 넘겨주어야 함. 주소(pA)가 아닌.
+
+	pB->setNo(200);
+
+	pA->show();
+	pB->show();
+
+	delete pA;
+	delete pB;
 }
