@@ -24,6 +24,8 @@ using namespace std;
 
 int main() {
 
+	//const값이 어디에 붙느냐에 따라 그 값을 수정할 수 있는지 없는지에 대한 여부가 결정됨.
+	
 	const double PI = 3.141592;
 	// PI = 3.14;
 
