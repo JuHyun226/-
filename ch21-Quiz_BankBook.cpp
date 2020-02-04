@@ -1,5 +1,6 @@
 //ch21-Quiz_BankBook.cpp
-
+//클래스명.cpp = 해당 클래스명의 구현부
+//class의 멤버필드로 클래스가 들어감(string class)
 #pragma once
 
 #include <iostream>
