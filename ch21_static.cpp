@@ -85,6 +85,8 @@ private: // memberfield에도 static 사용가능
 };
 
 
+
+
 // static 변수는 생성자가 아닌 "클래스 밖에서 초기화" 시켜야함.
 string Unit::team = "none";
 int Unit::cnt = 0;
