@@ -14,7 +14,7 @@ using namespace std;
 
 class Base {
 public:
-	// Base() { cout << "-Base 생성자-" << endl; } 생성자, 얘가 없으면 derived 생성자에서 error가 남. b/c 디폴트 생성자가 없어서.
+	Base() { cout << "-Base 생성자-" << endl; }// 생성자, 얘가 없으면 derived 생성자에서 error가 남. b/c 디폴트 생성자가 없어서.
 	Base(int a) {
 		cout << "-Base 생성자-" << endl;
 		this->a = a;
