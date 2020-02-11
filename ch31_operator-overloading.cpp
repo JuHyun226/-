@@ -125,3 +125,38 @@ int main() {
 	newP = pA + 100;
 	newP.showPoint();
 }
+
+//----------------------------------------------
+//-----------------------------------------------------------------
+
+
+class Point {
+public:
+	void showPoint() {
+		cout << "X : " << px << " - Y : " << py << endl;
+	}
+	Point& operator++() {  // 전위 ++ 
+		cout << "- 전위 연산 -" << endl;
+		this->px++;
+		this->py++;
+		return *this;
+	}
+	Point(const int& px = 0, const int& py = 0) : px(px), py(py) {}
+
+private:
+	int py;
+	int px;
+};
+
+int main() {
+
+	Point pA(10, 10);
+	Point pB;
+	pA.showPoint();
+	pB.showPoint();
+	cout << endl;
+
+	pB = ++pA;
+	pA.showPoint();
+	pB.showPoint();
+}
