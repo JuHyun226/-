@@ -127,8 +127,6 @@ int main() {
 }
 
 //----------------------------------------------
-//-----------------------------------------------------------------
-
 
 class Point {
 public:
@@ -140,6 +138,13 @@ public:
 		this->px++;
 		this->py++;
 		return *this;
+	}
+	Point operator++(int x) { // 후위 ++
+		cout << "- 후위 연산 -" << endl;
+		Point tmp = *this; //임시객체 저장, 증가 이전 객체 보관
+		this->px++;
+		this->py++;
+		return tmp; //증가 이전 객체 반환.
 	}
 	Point(const int& px = 0, const int& py = 0) : px(px), py(py) {}
 
@@ -157,6 +162,10 @@ int main() {
 	cout << endl;
 
 	pB = ++pA;
+	pA.showPoint();
+	pB.showPoint();
+
+	pB = pA++;
 	pA.showPoint();
 	pB.showPoint();
 }
